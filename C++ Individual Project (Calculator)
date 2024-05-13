@@ -1,0 +1,305 @@
+#include <iostream>
+#include <string>
+#include <math.h>
+using namespace std;
+int main()
+{
+//Login Variable
+string Username="Rizfie",Password="321516";
+string user,pass;
+int retry;
+//Login Loop
+for (int count = 1;count<=3;count++)
+{
+cout<<"\nPlease enter your username : ";
+cin>>user;
+cout<<"Please enter your password : ";
+cin>>pass;
+if ((user==Username) && (pass==Password))
+{cout<<"\nWelcome back!";
+break;}
+else
+{cout<<"\nWrong username or password"<<endl;
+retry=3-count;
+cout<<"\nYou have "<<retry<<" more retry"<<endl;}
+if (retry==0)
+{return 0;}
+}
+//Calculator design page
+cout<<"\n----------------------"<<endl;
+cout<<"3D GEOMETRY CALCULATOR"<<endl;
+cout<<"----------------------"<<endl;
+//calculator variable
+char code;
+int opt;
+char Vol='1',Surf='2';
+//calculator design page
+start:
+cout<<"\nPlease enter the code for your desired 3D Geometry shape : "<<endl;
+cout<<"A - CUBE"<<endl;
+cout<<"B - RECTANGLE SOLID"<<endl;
+cout<<"C - SPHERE"<<endl;
+cout<<"D - RIGHT CIRCULAR CYLINDER"<<endl;
+cout<<"E - RIGHT CIRCULAR CONE"<<endl;
+cout<<"F - SQUARE PYRAMID"<<endl;
+cout<<"G - REGULAR TETRAHEDRON\n"<<endl;
+cin>>code;
+//calculation variable
+float side,volu,surfa,length,width,height,rad,pi=3.142;
+//calculator selection
+while (toupper(code)!='A' && toupper(code)!='B' && toupper(code)!='C' && toupper(code)!='D' &&
+toupper(code)!='E' && toupper(code)!='F' && toupper(code)!='G')
+{
+cout<<"\nInvalid code"<<endl;
+cout<<"Please try again\n"<<endl;
+cin>>code;
+}
+// A
+if (toupper(code) =='A')
+{
+cout<<"\nYou have selected Cube calculator";
+cout<<"\nPlease choose your options : "<<endl;
+cout<<"1 - Volume"<<endl;
+cout<<"2 - Surface\n"<<endl;
+cin>>opt;
+ while (opt!=1 && opt!=2)
+ {
+ cout<<"\nInvalid option"<<endl;
+ cout<<"Please try again\n"<<endl;
+ cin>>opt;
+}
+if (opt==1)
+{
+cout<<"\nYou have choosen volume option"<<endl;
+cout<<"Please enter the value of side of your cube : ";
+cin>>side;
+volu=pow(side,3);
+cout<<"The volume of your cube are "<<volu<<endl;
+}
+else if (opt==2)
+{
+cout<<"\nYou have choosen surface option"<<endl;
+cout<<"Please enter the value of side of your cube : ";
+cin>>side;
+surfa=6*pow(side,2);
+cout<<"The surface area of your cube are "<<surfa<<endl;
+}
+}
+// B
+else if (toupper(code) =='B')
+{
+cout<<"\nYou have selected Rectangle Solid calculator";
+cout<<"\nPlease choose your options : "<<endl;
+cout<<"1 - Volume"<<endl;
+cout<<"2 - Surface\n"<<endl;
+cin>>opt;
+ while (opt!=1 && opt!=2)
+ {
+ cout<<"\nInvalid option"<<endl;
+ cout<<"Please try again\n"<<endl;
+ cin>>opt;
+ }
+if (opt==1)
+{
+cout<<"\nYou have choosen volume option"<<endl;
+cout<<"Please enter the value of length : ";
+cin>>length;
+cout<<"Please enter the value of width : ";
+cin>>width;
+cout<<"Please enter the value of height : ";
+cin>>height;
+volu=length*width*height;
+cout<<"The volume of your rectangle solid are "<<volu<<endl;
+}
+else if (opt==2)
+{
+cout<<"\nYou have choosen surface option"<<endl;
+cout<<"Please enter the value of length : ";
+cin>>length;
+cout<<"Please enter the value of width : ";
+cin>>width;
+cout<<"Please enter the value of height : ";
+cin>>height;
+surfa=2*((length*width)+(length*height)+(width*height));
+cout<<"The surface area of your rectangle solid are "<<surfa<<endl;
+}
+}
+//C
+else if (toupper(code) =='C')
+{
+cout<<"\nYou have selected Sphere calculator";
+cout<<"\nPlease choose your options : "<<endl;
+cout<<"1 - Volume"<<endl;
+cout<<"2 - Surface\n"<<endl;
+cin>>opt;
+ while (opt!=1 && opt!=2)
+ {
+ cout<<"\nInvalid option"<<endl;
+ cout<<"Please try again\n"<<endl;
+ cin>>opt;
+ }
+if (opt==1)
+{
+cout<<"\nYou have choosen volume option"<<endl;
+cout<<"Please enter the radius of your sphere : ";
+cin>>rad;
+volu=1.33*pi*pow(rad,2);
+cout<<"The volume of your sphere are "<<volu<<endl;
+}
+else if (opt==2)
+{
+cout<<"\nYou have choosen surface option"<<endl;
+cout<<"Please enter the radius of your sphere : ";
+cin>>rad;
+surfa=4*pi*pow(rad,2);
+cout<<"The surface area of your sphere are "<<surfa<<endl;
+}
+}
+//D
+else if (toupper(code) =='D')
+{
+cout<<"\nYou have selected Right Circular Cylinder calculator";
+cout<<"\nPlease choose your options : "<<endl;
+cout<<"1 - Volume"<<endl;
+cout<<"2 - Surface\n"<<endl;
+cin>>opt;
+ while (opt!=1 && opt!=2)
+ {
+ cout<<"\nInvalid option"<<endl;
+ cout<<"Please try again\n"<<endl;
+ cin>>opt;
+ }
+if (opt==1)
+{
+cout<<"\nYou have choosen volume option"<<endl;
+cout<<"Please enter the radius of your cylinder : ";
+cin>>rad;
+cout<<"\nPlease enter the height of your cylinder : ";
+cin>>height;
+volu=pi*pow(rad,2)*height;
+cout<<"The volume of your cylinder are "<<volu<<endl;
+}
+else if (opt==2)
+{
+cout<<"\nYou have choosen surface option"<<endl;
+cout<<"Please enter the radius of your cylinder : ";
+cin>>rad;
+cout<<"\nPlease enter the height of your cylinder : ";
+cin>>height;
+surfa=(2*pi*rad*height)+(2*pi*pow(rad,2));
+cout<<"The surface area of your cylinder are "<<surfa<<endl;
+}
+}
+//E
+else if (toupper(code) =='E')
+{
+cout<<"\nYou have selected Right Circular Cone calculator";
+cout<<"\nPlease choose your options : "<<endl;
+cout<<"1 - Volume"<<endl;
+cout<<"2 - Surface\n"<<endl;
+cin>>opt;
+ while (opt!=1 && opt!=2)
+ {
+ cout<<"\nInvalid option"<<endl;
+ cout<<"Please try again\n"<<endl;
+ cin>>opt;
+ }
+if (opt==1)
+{
+cout<<"\nYou have choosen volume option"<<endl;
+cout<<"Please enter the radius of your cone : ";
+cin>>rad;
+cout<<"\nPlease enter the height of your cone : ";
+cin>>height;
+volu=0.33*pi*pow(rad,2)*height;
+cout<<"The volume of your cone are "<<volu<<endl;
+}
+else if (opt==2)
+{
+cout<<"\nYou have choosen surface option"<<endl;
+cout<<"Please enter the radius of your cone : ";
+cin>>rad;
+cout<<"\nPlease enter the height of your cone : ";
+cin>>height;
+surfa=(pi*rad*sqrt(pow(rad,2)+pow(height,2)))+(pi*pow(rad,2));
+cout<<"The surface area of your cone are "<<surfa<<endl;
+}
+}
+//F
+else if (toupper(code) =='F')
+{
+cout<<"\nYou have selected Square Pyramid calculator";
+cout<<"\nPlease choose your options : "<<endl;
+cout<<"1 - Volume"<<endl;
+cout<<"2 - Surface\n"<<endl;
+cin>>opt;
+ while (opt!=1 && opt!=2)
+ {
+ cout<<"\nInvalid option"<<endl;
+ cout<<"Please try again\n"<<endl;
+ cin>>opt;
+ }
+if (opt==1)
+{
+cout<<"\nYou have choosen volume option"<<endl;
+cout<<"Please enter the side of your pyramid : ";
+cin>>side;
+cout<<"\nPlease enter the height of your pyramid : ";
+cin>>height;
+volu=0.33*pow(side,2)*height;
+cout<<"The volume of your pyramid are "<<volu<<endl;
+}
+else if (opt==2)
+{
+cout<<"\nYou have choosen surface option"<<endl;
+cout<<"Please enter the side of your pyramid : ";
+cin>>side;
+cout<<"\nPlease enter the height of your pyramid : ";
+cin>>height;
+surfa=side*(side+sqrt(pow(side,2)+4*pow(height,2)));
+cout<<"The surface area of your pyramid are "<<surfa<<endl;
+}
+}
+//G
+else if (toupper(code) =='G')
+{
+cout<<"\nYou have selected Regular Tetrahedron calculator";
+cout<<"\nPlease choose your options : "<<endl;
+cout<<"1 - Volume"<<endl;
+cout<<"2 - Surface\n"<<endl;
+cin>>opt;
+ while (opt!=1 && opt!=2)
+ {
+ cout<<"\nInvalid option"<<endl;
+ cout<<"Please try again\n"<<endl;
+ cin>>opt;
+ }
+if (opt==1)
+{
+cout<<"\nYou have choosen volume option"<<endl;
+cout<<"Please enter the side of your tetrahedron : ";
+cin>>side;
+volu=0.083*sqrt(2)*pow(side,3);
+cout<<"The volume of your tetrahedron are "<<volu<<endl;
+}
+else if (opt==2)
+{
+cout<<"\nYou have choosen surface option"<<endl;
+cout<<"Please enter the side of your tetrahedron : ";
+cin>>side;
+surfa=sqrt(3)*pow(side,2);
+cout<<"The surface area of your tetrahedrone are "<<surfa<<endl;
+}
+}
+//ending variable
+char end;
+//ending calculator program
+cout<<"\nDo you want to continue?"<<endl;
+cout<<"Y - Yes"<<endl;
+cout<<"N - no\n"<<endl;
+cin>>end;
+if (toupper(end)=='Y')
+{goto start;}
+else if (toupper(end)=='N')
+{return 0;}
+}
