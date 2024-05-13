@@ -1,0 +1,503 @@
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <cstdlib>
+#include <cmath>
+#include <Windows.h>
+
+using namespace std;
+
+// Headers
+string toString (double);
+int toInt (string);
+double toDouble (string);
+void calFemale();
+void calMale();
+
+int main() {
+    cout << "---------------------Welcome to Life Insurance Purchasing System-------------------------" << endl;
+    string name, gender;
+    int keynumber; 
+    
+    cout<<"\nFor using this program, please create your username and password first.";
+    cout<<endl; 
+	cout << "Please enter your username :";
+    cin >> name;
+    cout << "Please enter your password :"; 
+    cin >> keynumber;
+    string username[5];
+    int password[5];
+    
+    username[0] = name;
+    password[0] = keynumber;
+    string answer;
+    
+    system("cls");
+    cout << "Welcome to Life Insurance Purchasing System" ;
+	cout << endl; 
+	cout <<"Please log in your account"; 
+	cout << endl; 
+    cout << "Enter your username :";
+    cin >> name;
+    cout << "Enter your password :";
+    cin >> keynumber;
+    
+    if (username[0] != name || password[0] != keynumber) {
+        cout << "Only three chances remain" << endl;
+        int count;
+        
+        count = 0;
+        while (count < 3) {
+        	
+            count = count + 1;
+            if (username[0] != name || password[0] != keynumber) {
+                cout << "Enter your username :"; 
+                cin >> name;
+                cout << "Enter your password :"; 
+                cin >> keynumber;
+            }
+        }
+        if (username[0] != name || password[0] != keynumber) {
+        } else {
+        	
+            cout << "Please enter your gender. Male[M], Female[F] :";
+            cin >> gender;
+            
+            if (gender != "M") {
+                calFemale();
+                
+            } else {
+                calMale();
+            }
+        }
+    } else {
+    	system("cls");               
+        cout << "Please enter your gender. Male[M], Female[F] :"; 
+        cin >> gender;
+        
+        if (gender != "M") {
+            calFemale();
+            
+        } else {
+            calMale();
+        }
+    }
+    cout << "Do you wish to proceed? Yes or No :"; 
+    cin >> answer;
+    while (answer != "No") {
+    	
+        cout << "Please enter your gender. Male[M], Female[F] :" ;
+        cin >> gender;
+        
+        if (gender != "M") {
+            calFemale();
+            
+        } else {
+            calMale();
+        }
+        cout << "Do you wish to proceed? Yes or No :" ;
+        cin >> answer;
+    }
+    cout << "Thank you for using this program" ;
+	cout << endl;
+	
+    cout << "Welcome back.Do you want to exit?....Yes or No :" ;
+    cin >> answer;
+    
+    if (answer != "Yes") {
+        cout << "Do you want to create account? Yes or No :" ;
+        cin >> answer;
+        
+        while (answer == "Yes") {
+            cout << "Enter your username :" ;
+            cin >> name;
+            cout << "Enter your password :" ;
+            cin >> keynumber;
+            username[0] = name;
+            password[0] = keynumber;
+            cout << "Please log in again" ;
+            cout << "Enter your username :" ;
+            cin  >> name;
+            cout << "Enter your password :" ;
+            cin  >> keynumber;
+            
+            if (username[0] != name || password[0] != keynumber) {
+                cout << "You only have 3 chance" << endl;
+                int count;
+                
+                count = 0;
+                while (count < 3) {
+                    count = count + 1;
+                    
+                    if (username[0] != name || password[0] != keynumber) {
+                        cout << "Enter your username :" ; 
+                        cin  >> name;
+                        cout << "Enter your password :" ; 
+                        cin >> keynumber;
+                    }
+                }
+                if (username[0] != name || password[0] != keynumber) {
+                	
+                } else {
+                    cout << "Please enter gender.Male[M] Female[F] :" ;
+                    cin >> gender;
+                    
+                    if (gender != "M") {
+                        calFemale();
+                        
+                    } else {
+                        calMale();
+                    }
+                }
+            } else {
+                cout << "Please enter gender.Male[M] Female[F] :" ;
+                cin >> gender;
+                
+                if (gender != "M") {
+                    calFemale();
+                    
+                } else {
+                    calMale();
+                }
+            }
+            cout << "Thank you for using me" ;
+			cout << endl;
+            cout << "Do you want to calculate insurance again?....Yes or No :" ;
+            cin >> answer;
+            while (answer == "Yes") {
+                cout << "Please enter gender.Male[M] Female[F] :" ;
+                cin >> gender;
+                
+                if (gender != "M") {
+                    calFemale();
+                    
+                } else {
+                    calMale();
+                }
+                cout << "Do you want to calculate insurance again?....Yes or No :" ;
+                cin >> answer;
+            }
+        }
+        cout << "Do you want to log in ? Yes or No :" ;
+        cin >> answer;
+        
+        if (answer == "Yes") {
+            cout << "Enter your username :" ;
+            cin >> name;
+            cout << "Enter your password :" ;
+            cin >> keynumber;
+            
+            if (username[0] != name || password[0] != keynumber) {
+                cout << "You only have 3 chance" << endl;
+                int count;
+                
+                count = 0;
+                while (count < 3) {
+                    count = count + 1;
+                    
+                    if (username[0] != name || password[0] != keynumber) {
+                        cout << "Enter your username :" ;
+                        cin >> name;
+                        cout << "Enter your password :" ;
+                        cin >> keynumber;
+                    }
+                }
+                if (username[0] != name || password[0] != keynumber) {
+                	
+                } else {
+                    cout << "Please enter gender.Male[M] Female[F] :" ;
+                    cin >> gender;
+                    
+                    if (gender != "M") {
+                        calFemale();
+                        
+                    } else {
+                        calMale();
+                    }
+                }
+                cout << "Thank you for using me" ; 
+				cout << endl;
+				
+            } else {
+                cout << "Please enter gender.Male[M] Female[F] :" ; 
+                cin >> gender;
+                
+                if (gender != "M") {
+                    calFemale();
+                    
+                } else {
+                    calMale();
+                }
+                cout << "Thank you for using" ;
+				cout << endl;
+            }
+        } else {
+            cout << "Thank you for using me" ; 
+			cout << endl;
+        }
+    }
+    
+    
+    return 0;
+}
+
+void calFemale() {
+    string answer;
+    int age;
+    double premium, faceValueofPolicy;
+    
+    cout << "Please enter face value of policy :" ;
+    cin >> faceValueofPolicy;
+    cout << " RM " << faceValueofPolicy ;
+	cout << endl;
+	
+    if (faceValueofPolicy > 1000) {
+        cout << "Are you smoker? Yes or No :" ;
+        cin >> answer;
+        
+        if (answer != "No") {
+            cout << "Please enter your age :" ;
+            cin >> age;
+            
+            if (age >= 18) {
+                premium = faceValueofPolicy / 1000 * 2.20;
+                cout << "The premium value of insurance is :RM " << premium ;
+				cout << endl;
+                premium = premium * 12;
+                cout << "The premium value of insurance in a year is :RM " << premium ;
+				cout << endl;
+				
+            } else {
+            	
+                if (age >= 41) {
+                    premium = faceValueofPolicy / 1000 * 2.25;
+                    cout << "The premium value of insurance is :RM " << premium ;
+					cout << endl;
+                    premium = premium * 12;
+                    cout << "The premium value of insurance in a year is :RM " << premium ;
+					cout << endl;
+					
+                } else {
+                	
+                    if (age > 60) {
+                        premium = faceValueofPolicy / 1000 * 2.30;
+                        cout << "The premium value of insurance is :RM " << premium ;
+						cout << endl;
+                        premium = premium * 12;
+                        cout << "The premium value of insurance in a year is :RM " << premium ;
+						cout << endl;
+						
+                    } else {
+                    	
+                        if (age < 18) {
+                            premium = faceValueofPolicy / 1000 * 2.15;
+                            cout << "The premium value of insurance is :RM " << premium ;
+							cout << endl;
+                            premium = premium * 12;
+                            cout << "The premium value of insurance in a year is :RM " << premium ;
+							cout << endl;
+                        }
+                    }
+                }
+            }
+        } else {
+            cout << "Please enter your age :" ;
+            cin >> age;
+            
+            if (age >= 18) {
+                premium = faceValueofPolicy / 1000 * 2.10;
+                cout << "The premium value of insurance is :RM " << premium ;
+				cout << endl;
+                premium = premium * 12;
+                cout << "The premium value of insurance in a year is :RM " << premium ;
+				cout << endl;
+				
+            } else {
+            	
+                if (age >= 41) {
+                    premium = faceValueofPolicy / 1000 * 2.15;
+                    cout << "The premium value of insurance is :RM " << premium ; 
+					cout << endl;
+                    premium = premium * 12;
+                    cout << "The premium value of insurance in a year is :RM " << premium ;
+					cout << endl;
+					
+                } else {
+                	
+                    if (age > 60) {
+                        premium = faceValueofPolicy / 1000 * 2.20;
+                        cout << "The premium value of insurance is :RM " << premium ;
+						cout << endl;
+                        premium = premium * 12;
+                        cout << "The premium value of insurance in a year is :RM " << premium ;
+						cout << endl;
+						
+                    } else {
+                    	
+                        if (age < 18) {
+                            premium = faceValueofPolicy / 1000 * 2.05;
+                            cout << "The premium value of insurance is :RM " << premium ;
+							cout << endl;
+                            premium = premium * 12;
+                            cout << "The premium value of insurance in a year is :RM " << premium ;
+							cout << endl;
+                        }
+                    }
+                }
+            }
+        }
+    } else {
+        cout << " Sorry the amount is too low" ; 
+		cout << endl;
+    }
+    //receipt page
+    system("cls");
+	cout << "------------------------------------------------"<<endl;
+	cout << "                  Your Receipt                  "<<endl;
+	cout << "------------------------------------------------"<<endl;
+	cout << "Your face value of policy : RM"<<faceValueofPolicy<<endl;
+	if (answer != "No"){
+		cout << "You are a smoker"<<endl;}
+	else{
+		cout << "You are a non-smoker"<<endl;}
+	cout << "You are "<<age<<" years old"<<endl;
+	cout << "Your annually premium value of insurance is "<<premium<<endl;
+	cout << "------------------------------------------------"<<endl;
+}
+
+void calMale() {
+    string answer;
+    double faceValueofPolicy, premium;
+    int age;
+    
+    cout << "Please enter face value of policy :" ;
+    cin >> faceValueofPolicy;
+    cout << "RM" << faceValueofPolicy << endl;
+    
+    if (faceValueofPolicy > 1000) {
+        cout << "Are you smoker?Yes or No :" ;
+        cin >> answer;
+        
+        if (answer != "No") {
+            cout << "Please enter your age :" ;
+            cin >> age;
+            
+            if (age >= 18) {
+                premium = faceValueofPolicy / 1000 * 2.70;
+                cout << "The premium value of insurance is :RM " << premium ;
+				cout << endl;
+                premium = premium * 12;
+                cout << "The premium value of insurance in a year is :RM " << premium ;
+				cout << endl;
+				
+            } else {
+            	
+                if (age >= 41) {
+                    premium = faceValueofPolicy / 1000 * 2.75;
+                    cout << "The premium value of insurance is :RM " << premium ;
+					cout << endl;
+                    premium = premium * 12;
+                    cout << "The premium value of insurance in a year is :RM " << premium ;
+					cout << endl;
+					
+                } else {
+                	
+                    if (age > 60) {
+                        premium = faceValueofPolicy / 1000 * 2.80;
+                        cout << "The premium value of insurance is :RM " << premium ;
+						cout << endl;
+                        premium = premium * 12;
+                        cout << "The premium value of insurance in a year is :RM " << premium ;
+						cout << endl;
+						
+                    } else {
+                    	
+                        if (age < 18) {
+                            premium = faceValueofPolicy / 1000 * 2.65;
+                            cout << "The premium value of insurance is :RM " << premium ;
+							cout << endl;
+                            premium = premium * 12;
+                            cout << "The premium value of insurance in a year is :RM " << premium ;
+							cout << endl;
+                        }
+                    }
+                }
+            }
+        } else {
+            cout << "Please enter your age :" ;
+            cin >> age;
+            
+            if (age >= 18) {
+                premium = faceValueofPolicy / 1000 * 2.30;
+                cout << "The premium value of insurance is :RM " << premium ;
+				cout << endl;
+                premium = premium * 12;
+                cout << "The premium value of insurance in a year is :RM " << premium ;
+				cout << endl;
+				
+            } else {
+            	
+                if (age >= 41) {
+                    premium = faceValueofPolicy / 1000 * 2.35;
+                    cout << "The premium value of insurance is :RM " << premium ;
+					cout << endl;
+                    premium = premium * 12;
+                    cout << "The premium value of insurance in a year is :RM " << premium ;
+					cout << endl;
+					
+                } else {
+                	
+                    if (age > 60) {
+                        premium = faceValueofPolicy / 1000 * 2.40;
+                        cout << "The premium value of insurance is :RM " << premium ;
+						cout << endl;
+                        premium = premium * 12;
+                        cout << "The premium value of insurance in a year is :RM " << premium ;
+						cout << endl;
+						
+                    } else {
+                    	
+                        if (age < 18) {
+                            premium = faceValueofPolicy / 1000 * 2.25;
+                            cout << "The premium value of insurance is :RM " << premium ;
+							cout << endl;
+                            premium = premium * 12;
+                            cout << "The premium value of insurance in a year is :RM " << premium ;
+							cout << endl;
+                        }
+                    }
+                }
+            }
+        }
+    } else {
+        cout << "Sorry the amount is too low" << endl;
+    }
+    //receipt page
+    system("cls");
+	cout << "------------------------------------------------"<<endl;
+	cout << "                  Your Receipt                  "<<endl;
+	cout << "------------------------------------------------"<<endl;
+	cout << "Your face value of policy : RM"<<faceValueofPolicy<<endl;
+	if (answer != "No"){
+		cout << "You are a smoker"<<endl;}
+	else{
+		cout << "You are a non-smoker"<<endl;}
+	cout << "You are "<<age<<" years old"<<endl;
+	cout << "Your annually premium value of insurance is "<<premium<<endl;
+	cout << "------------------------------------------------"<<endl;
+}
+
+// The following implements type conversion functions.
+string toString (double value) { //int also
+    stringstream temp;
+    temp << value;
+    return temp.str();
+}
+
+int toInt (string text) {
+    return atoi(text.c_str());
+}
+
+double toDouble (string text) {
+    return atof(text.c_str());
+}
